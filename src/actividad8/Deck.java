@@ -56,14 +56,14 @@ public class Deck {
                 p = "Diamantes";
             }
             Card Tarje = new Card(p, c, v);
-            Baraja.add("palo " + Tarje.Palo + " color " + Tarje.Color + " valor " + Tarje.Valor);
+            Baraja.add("palo " + Tarje.palo + " color " + Tarje.color + " valor " + Tarje.valor);
         }
     }
 
     public void shuffle() {
         System.out.println("Mezclando ");
 
-        String shufle;
+        //String shufle;
         if (Baraja.size() <= 0) {
             System.out.println("El Deck esta vacio..");
 

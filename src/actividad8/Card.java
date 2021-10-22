@@ -11,14 +11,14 @@ package actividad8;
  */
 public class Card {
 
-    String Palo;
-    String Color;
-    String Valor;
+    String palo;
+    String color;
+    String valor;
 
     public Card(String Palo, String Color, String Valor) {
-        this.Color = Color;
-        this.Palo = Palo;
-        this.Valor = Valor;
+        this.color = Color;
+        this.palo = Palo;
+        this.valor = Valor;
     }
 
 }
