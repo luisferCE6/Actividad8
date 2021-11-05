@@ -74,68 +74,85 @@ public class Deck {
 
     }
 
-
     public void head() {
-        System.out.println("head");
-
-        System.out.println("primera carta " + Baraja.get(1));
 
         try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Se elimino " + Baraja.remove(1));
 
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Quedan:" + Baraja.size() + "Cartas");
+            System.out.println("head");
 
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("primera carta " + Baraja.get(1));
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Se elimino " + Baraja.remove(1));
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Quedan:" + Baraja.size() + "Cartas");
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            System.out.println("Se han agotado las cartas");
         }
 
     }
 
     public void pick() {
 
-        System.out.println("Pick ");
-
-        int R = (new Random().nextInt(51));
-        System.out.println("se removera " + Baraja.get(R));
-
-        Baraja.remove(R);
         try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Quedan: " + Baraja.size() + " Cartas");
-    }
 
-    public void hand() {
+            System.out.println("Pick ");
 
-        System.out.println("Hand ");
-
-        for (int x = 0; x < 4; x++) {
-
-            int R = (new Random().nextInt(Baraja.size() - x));
-
+            int R = (new Random().nextInt(51));
             System.out.println("se removera " + Baraja.get(R));
 
             Baraja.remove(R);
-
-            System.out.println("Quedan:" + Baraja.size() + "Cartas");
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            System.out.println("Quedan: " + Baraja.size() + " Cartas");
+
+        } catch (Exception e) {
+            System.out.println("Se han agotado las cartas");
+        }
+
+    }
+
+    public void hand() {
+
+        try {
+            System.out.println("Hand ");
+
+            for (int x = 0; x < 4; x++) {
+
+                int R = (new Random().nextInt(Baraja.size() - x));
+
+                System.out.println("se removera " + Baraja.get(R));
+
+                Baraja.remove(R);
+
+                System.out.println("Quedan:" + Baraja.size() + "Cartas");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Se han agotado las cartas");
         }
     }
 }
